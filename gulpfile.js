@@ -67,7 +67,7 @@ gulp.task('bower', function() { 
 // jS
 gulp.task('js', function() {
 	gulp.src(jsSources)
-	.pipe(gulpif(env === 'production', concat('script.js')))
+	.pipe(concat('script.js'))
 	//.pipe(browserify())
 	.pipe(gulpif(env === 'production', uglify()))
 	.pipe(gulp.dest(outputDir + 'js'))
